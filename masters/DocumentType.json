@@ -1,0 +1,26 @@
+{
+  "tenantId": "pb",
+  "moduleName": "advocate-service",
+  "DocumentType": [
+    {
+      "code": "BAR_COUNCIL_ID",
+      "name": "Bar Council ID",
+      "isActive": true
+    },
+    {
+      "code": "AADHAR_CARD",
+      "name": "Aadhar Card",
+      "isActive": true
+    },
+    {
+      "code": "PAN_CARD",
+      "name": "PAN Card",
+      "isActive": true
+    },
+    {
+      "code": "PASSPORT",
+      "name": "Passport",
+      "isActive": true
+    }
+  ]
+}

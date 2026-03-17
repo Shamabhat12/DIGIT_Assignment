@@ -1,0 +1,47 @@
+ServiceMaps:
+  serviceName: advocate-service
+  version: 1.0
+  mappings:
+    - topic: save-advocate
+      configKey: INDEX
+      indexes:
+        - name: advocate
+          type: general
+          id: $.advocates.*.id
+          isBulk: true
+          timeStampField: $.advocates.*.auditDetails.createdTime
+          jsonPath: $.advocates.*
+          customJsonMapping:
+            indexMapping:
+              {
+                "mappings": {
+                  "properties": {
+                    "id": { "type": "keyword" },
+                    "tenantId": { "type": "keyword" },
+                    "applicationNumber": { "type": "keyword" },
+                    "barRegistrationNumber": { "type": "keyword" },
+                    "advocateType": { "type": "keyword" },
+                    "individualId": { "type": "keyword" },
+                    "isActive": { "type": "boolean" },
+                    "status": { "type": "keyword" },
+                    "auditDetails": {
+                      "properties": {
+                        "createdBy": { "type": "keyword" },
+                        "createdTime": { "type": "date" },
+                        "lastModifiedBy": { "type": "keyword" },
+                        "lastModifiedTime": { "type": "date" }
+                      }
+                    }
+                  }
+                }
+              }
+
+    - topic: update-advocate
+      configKey: INDEX
+      indexes:
+        - name: advocate
+          type: general
+          id: $.advocates.*.id
+          isBulk: true
+          timeStampField: $.advocates.*.auditDetails.lastModifiedTime
+          jsonPath: $.advocates.*

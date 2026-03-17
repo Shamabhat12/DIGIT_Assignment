@@ -1,0 +1,78 @@
+{
+  "info": {
+    "name": "Advocate Registration API",
+    "description": "Postman collection to test Advocate Registration APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Advocate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/digit-assignment/advocate/v1/_create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["digit-assignment", "advocate", "v1", "_create"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"Rainmaker\",\n    \"ver\": \".01\",\n    \"ts\": 1513579888683,\n    \"action\": \"_create\",\n    \"did\": \"1\",\n    \"key\": \"\",\n    \"msgId\": \"20170310130900|en_IN\",\n    \"authToken\": \"your-auth-token\",\n    \"userInfo\": {\n      \"id\": 1,\n      \"uuid\": \"11b0e02b-0145-4de2-bc42-c97b96264807\",\n      \"userName\": \"advocate1\",\n      \"name\": \"Test Advocate\",\n      \"mobileNumber\": \"9876543210\",\n      \"emailId\": \"advocate@test.com\",\n      \"type\": \"CITIZEN\",\n      \"roles\": [\n        {\n          \"name\": \"Citizen\",\n          \"code\": \"CITIZEN\",\n          \"tenantId\": \"pb\"\n        }\n      ],\n      \"tenantId\": \"pb\"\n    }\n  },\n  \"advocates\": [\n    {\n      \"tenantId\": \"pb\",\n      \"individualId\": \"IND-2024-001\",\n      \"barRegistrationNumber\": \"BAR123456\",\n      \"advocateType\": \"ADVOCATE\",\n      \"isActive\": true,\n      \"workflow\": {\n        \"action\": \"APPLY\",\n        \"comments\": \"Registering as advocate\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Search Advocate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/digit-assignment/advocate/v1/_search",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["digit-assignment", "advocate", "v1", "_search"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"Rainmaker\",\n    \"ver\": \".01\",\n    \"ts\": 1513579888683,\n    \"action\": \"_search\",\n    \"did\": \"1\",\n    \"key\": \"\",\n    \"msgId\": \"20170310130900|en_IN\",\n    \"authToken\": \"your-auth-token\",\n    \"userInfo\": {\n      \"id\": 1,\n      \"uuid\": \"11b0e02b-0145-4de2-bc42-c97b96264807\",\n      \"userName\": \"advocate1\",\n      \"name\": \"Test Advocate\",\n      \"mobileNumber\": \"9876543210\",\n      \"type\": \"CITIZEN\",\n      \"roles\": [\n        {\n          \"name\": \"Citizen\",\n          \"code\": \"CITIZEN\",\n          \"tenantId\": \"pb\"\n        }\n      ],\n      \"tenantId\": \"pb\"\n    }\n  },\n  \"criteria\": [\n    {\n      \"tenantId\": \"pb\"\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Advocate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/digit-assignment/advocate/v1/_update",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["digit-assignment", "advocate", "v1", "_update"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"Rainmaker\",\n    \"ver\": \".01\",\n    \"ts\": 1513579888683,\n    \"action\": \"_update\",\n    \"did\": \"1\",\n    \"key\": \"\",\n    \"msgId\": \"20170310130900|en_IN\",\n    \"authToken\": \"your-auth-token\",\n    \"userInfo\": {\n      \"id\": 1,\n      \"uuid\": \"11b0e02b-0145-4de2-bc42-c97b96264807\",\n      \"userName\": \"nyaymitra1\",\n      \"name\": \"Nyay Mitra\",\n      \"mobileNumber\": \"9876543210\",\n      \"type\": \"EMPLOYEE\",\n      \"roles\": [\n        {\n          \"name\": \"Nyay Mitra\",\n          \"code\": \"NYAY_MITRA\",\n          \"tenantId\": \"pb\"\n        }\n      ],\n      \"tenantId\": \"pb\"\n    }\n  },\n  \"advocates\": [\n    {\n      \"id\": \"replace-with-actual-id\",\n      \"tenantId\": \"pb\",\n      \"individualId\": \"IND-2024-001\",\n      \"barRegistrationNumber\": \"BAR123456\",\n      \"advocateType\": \"ADVOCATE\",\n      \"isActive\": true,\n      \"auditDetails\": {\n        \"createdBy\": \"11b0e02b-0145-4de2-bc42-c97b96264807\",\n        \"createdTime\": 1513579888683,\n        \"lastModifiedBy\": \"11b0e02b-0145-4de2-bc42-c97b96264807\",\n        \"lastModifiedTime\": 1513579888683\n      },\n      \"workflow\": {\n        \"action\": \"APPROVE\",\n        \"comments\": \"Documents verified, approving registration\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "RequestInfo": {
+    "apiId": "Rainmaker",
+    "action": "",
+    "did": 1,
+    "key": "",
+    "msgId": "20170310130900|en_IN",
+    "requesterId": "",
+    "ts": 1513579888683,
+    "ver": ".01",
+    "authToken": ""
+  },
+  "BusinessServices": [
+    {
+      "tenantId": "pb",
+      "businessService": "ADVOCATE",
+      "business": "advocate-service",
+      "businessServiceSrt": "Advocate Registration",
+      "sourceChannel": "CITIZEN",
+      "allowedFirstStates": [
+        "PENDING_APPROVAL"
+      ],
+      "states": [
+        {
+          "sla": null,
+          "state": null,
+          "applicationStatus": "APPLIED",
+          "docUploadRequired": false,
+          "isStartState": true,
+          "isTerminateState": false,
+          "isStateUpdatable": true,
+          "actions": [
+            {
+              "action": "APPLY",
+              "nextState": "PENDING_APPROVAL",
+              "roles": [
+                "CITIZEN",
+                "ADVOCATE"
+              ]
+            }
+          ]
+        },
+        {
+          "sla": null,
+          "state": "PENDING_APPROVAL",
+          "applicationStatus": "PENDING_APPROVAL",
+          "docUploadRequired": false,
+          "isStartState": false,
+          "isTerminateState": false,
+          "isStateUpdatable": true,
+          "actions": [
+            {
+              "action": "APPROVE",
+              "nextState": "APPROVED",
+              "roles": [
+                "NYAY_MITRA",
+                "COURT_ADMIN"
+              ]
+            },
+            {
+              "action": "REJECT",
+              "nextState": "REJECTED",
+              "roles": [
+                "NYAY_MITRA",
+                "COURT_ADMIN"
+              ]
+            }
+          ]
+        },
+        {
+          "sla": null,
+          "state": "APPROVED",
+          "applicationStatus": "APPROVED",
+          "docUploadRequired": false,
+          "isStartState": false,
+          "isTerminateState": true,
+          "isStateUpdatable": false,
+          "actions": []
+        },
+        {
+          "sla": null,
+          "state": "REJECTED",
+          "applicationStatus": "REJECTED",
+          "docUploadRequired": false,
+          "isStartState": false,
+          "isTerminateState": true,
+          "isStateUpdatable": false,
+          "actions": [
+            {
+              "action": "RE_APPLY",
+              "nextState": "PENDING_APPROVAL",
+              "roles": [
+                "CITIZEN",
+                "ADVOCATE"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "tenantId": "pb",
+  "moduleName": "advocate-service",
+  "AdvocateType": [
+    {
+      "code": "ADVOCATE",
+      "name": "Advocate",
+      "isActive": true
+    },
+    {
+      "code": "ADVOCATE_GENERAL",
+      "name": "Advocate General",
+      "isActive": true
+    },
+    {
+      "code": "PUBLIC_PROSECUTOR",
+      "name": "Public Prosecutor",
+      "isActive": true
+    },
+    {
+      "code": "STANDING_COUNSEL",
+      "name": "Standing Counsel",
+      "isActive": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "RequestInfo": {
+    "apiId": "Rainmaker",
+    "action": "",
+    "did": 1,
+    "key": "",
+    "msgId": "20170310130900|en_IN",
+    "requesterId": "",
+    "ts": 1513579888683,
+    "ver": ".01",
+    "authToken": ""
+  },
+  "idRequests": [
+    {
+      "idName": "advocate.application.number",
+      "tenantId": "pb",
+      "format": "ADVOC_[SEQ_ADVOCATE_APPL_[TENANT_ID]]_[YYYY]"
+    },
+    {
+      "idName": "advocate.clerk.application.number",
+      "tenantId": "pb",
+      "format": "ADVOC_CLERK_[SEQ_ADVOCATE_CLERK_APPL_[TENANT_ID]]_[YYYY]"
+    }
+  ]
+}
