@@ -104,7 +104,7 @@
                 <configuration>
                     <jvmArguments>-Duser.timezone=UTC</jvmArguments>
                     <excludes>
-                        <exclude>
+                        <exclude>[]
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
