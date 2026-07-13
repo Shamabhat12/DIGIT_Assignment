@@ -166,7 +166,7 @@ digit_assignment
 ### Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/Shamabhat12/DIGIT_Assignment.git
 ```
 
 ### Navigate to the Project
