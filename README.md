@@ -1,122 +1,127 @@
-# DIGIT Assignment - Advocate Registration Module
+# Advocate Registration Module - DIGIT Developer Certification
 
-## Overview
+## Introduction
 
-This project is developed as part of the **DIGIT Developer Certification (Level 1)** assignment.
+This repository contains the implementation of the **Advocate Registration Module** developed as part of the **DIGIT Developer Certification (Level 1)** assignment.
 
-The module implements an **Advocate Registration Service** using **Java Spring Boot** by following the DIGIT Backend Developer Guidelines.
-
-The service exposes REST APIs for creating, updating, and searching advocate registration applications while integrating with core DIGIT services.
+The application is built using **Java Spring Boot** and follows the recommended DIGIT Backend Developer Guidelines. It provides REST APIs for advocate registration and integrates with the core DIGIT platform services such as IDGen, MDMS, Persister, and Workflow.
 
 ---
 
-# Features
+## Key Functionalities
 
-- Advocate Registration
-- Create Advocate API
-- Update Advocate API
-- Search Advocate API
-- Workflow Integration
-- ID Generation (IDGen)
-- Master Data Management (MDMS)
-- Persister Integration
-- Request Validation
-- JUnit Test Cases
-- Postman Collection
-
----
-
-# Technology Stack
-
-- Java 17
-- Spring Boot
-- Maven
-- PostgreSQL
-- Flyway Migration
-- Jackson
-- Lombok
-- JUnit 5
-- Mockito
-- DIGIT Services
+* Register a new Advocate
+* Update Advocate Registration
+* Search Advocate Applications
+* Workflow Management
+* Automatic Application ID Generation
+* Master Data Validation
+* Data Persistence
+* Flyway Database Migration
+* Unit Testing
+* API Testing with Postman
 
 ---
 
-# DIGIT Integrations
+## Tech Stack
 
-This project integrates with the following DIGIT platform services:
-
-| Service | Purpose |
-|----------|---------|
-| IDGen | Generates unique Advocate Application IDs |
-| MDMS | Fetches master data |
-| Persister | Persists advocate application data |
-| Workflow | Handles application workflow |
+| Technology  | Version               |
+| ----------- | --------------------- |
+| Java        | 17                    |
+| Spring Boot | Latest Stable         |
+| Maven       | Build Tool            |
+| PostgreSQL  | Database              |
+| Flyway      | Database Migration    |
+| Jackson     | JSON Processing       |
+| Lombok      | Boilerplate Reduction |
+| JUnit 5     | Unit Testing          |
+| Mockito     | Mock Testing          |
 
 ---
 
-# REST APIs
+## DIGIT Service Integrations
 
-## 1. Create Advocate
+The module communicates with the following DIGIT platform services:
+
+| Service                  | Function                                            |
+| ------------------------ | --------------------------------------------------- |
+| **IDGen**                | Generates unique advocate application IDs           |
+| **MDMS**                 | Provides and validates master data                  |
+| **Workflow**             | Controls application lifecycle and approval process |
+| **Persister**            | Persists application data into the database         |
+| **Indexer** *(Optional)* | Enables efficient search and indexing               |
+
+---
+
+## Available APIs
+
+### 1. Create Advocate
+
+**Method:** `POST`
 
 **Endpoint**
 
 ```
-POST /advocate/v1/_create
+/advocate/v1/_create
 ```
 
-**Description**
+**Purpose**
 
 Creates a new advocate registration application.
 
-Response
+**Response**
 
 ```
-201 Created
+HTTP 201 Created
 ```
 
 ---
 
-## 2. Update Advocate
+### 2. Update Advocate
+
+**Method:** `POST`
 
 **Endpoint**
 
 ```
-POST /advocate/v1/_update
+/advocate/v1/_update
 ```
 
-**Description**
+**Purpose**
 
-Updates an existing advocate application.
+Updates an existing advocate registration application.
 
-Response
+**Response**
 
 ```
-200 OK
+HTTP 200 OK
 ```
 
 ---
 
-## 3. Search Advocate
+### 3. Search Advocate
+
+**Method:** `POST`
 
 **Endpoint**
 
 ```
-POST /advocate/v1/_search
+/advocate/v1/_search
 ```
 
-**Description**
+**Purpose**
 
-Searches advocate applications based on search criteria.
+Searches advocate registration records using search criteria.
 
-Response
+**Response**
 
 ```
-200 OK
+HTTP 200 OK
 ```
 
 ---
 
-# Project Structure
+## Project Directory Structure
 
 ```
 digit_assignment
@@ -124,200 +129,118 @@ digit_assignment
 ├── src
 │   ├── main
 │   │   ├── java
+│   │   │   └── digit.academy.tutorial
 │   │   └── resources
-│   │
+│   │       └── db
+│   │           └── migration
 │   └── test
-│
-├── build
-│   └── digit_assignment.jar
 │
 ├── workflow
 │   └── workflow_config.json
 │
 ├── masters
-│   ├── advocate-schema.json
-│   └── master-data.json
+│   ├── master_schema_1.json
+│   ├── master_schema_2.json
+│   └── master_schema_3.json
 │
 ├── persister
-│   └── persister-config.yaml
+│   └── persister_config.yaml
 │
 ├── indexer
-│   └── indexer-config.yaml
+│   └── indexer_config.yaml
 │
 ├── api_test
-│   └── postman_collection.json
+│   ├── postman_collection_1.json
+│   └── postman_collection_2.json
+│
+├── build
+│   └── digit_assignment.jar
 │
 └── README.md
 ```
 
 ---
 
-# Build Instructions
+## Getting Started
 
-Clone the repository
+### Clone the Repository
 
-```
-git clone https://github.com/shwetha-hegde/digit-assignment.git
-```
-
-Move to project directory
-
-```
-cd digit-assignment
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
 ```
 
-Build the project
+### Navigate to the Project
 
+```bash
+cd digit_assignment
 ```
+
+### Build the Project
+
+```bash
 mvn clean install
 ```
 
-Run the application
+### Start the Application
 
-```
+```bash
 mvn spring-boot:run
 ```
 
 ---
 
-# Running Unit Tests
+## Running Tests
 
-Execute
+Execute the following command:
 
-```
+```bash
 mvn test
 ```
 
-Expected Result
+Expected output:
 
-```
-Tests run: 3
-Failures: 0
-Errors: 0
-Skipped: 0
-
+```text
 BUILD SUCCESS
 ```
 
 ---
 
-# Postman Collection
+## Repository Contents
 
-The Postman collection for testing all APIs is available under
+This repository includes:
 
-```
-api_test/
-```
-
----
-
-# Workflow Configuration
-
-Workflow configuration JSON is available under
-
-```
-workflow/
-```
+* Source code
+* Workflow configuration
+* Master data schemas
+* Persister configuration
+* Indexer configuration
+* Database migration scripts
+* Executable JAR
+* Postman collections
+* Unit test cases
+* API execution screenshots
 
 ---
 
-# Master Data
+## Assignment Deliverables
 
-Master Data schemas are available under
-
-```
-masters/
-```
-
----
-
-# Persister Configuration
-
-Persister configuration YAML is available under
-
-```
-persister/
-```
+* ✔ Public GitHub Repository
+* ✔ Java Spring Boot Source Code
+* ✔ Executable JAR File
+* ✔ Workflow JSON Configuration
+* ✔ Master Data JSON Schemas
+* ✔ Persister YAML Configuration
+* ✔ Indexer YAML Configuration
+* ✔ Postman Collections
+* ✔ JUnit Test Cases
+* ✔ API Test Results
 
 ---
 
-# Indexer Configuration
+## Author
 
-Indexer configuration YAML is available under
-
-```
-indexer/
-```
-
----
-
-# Database
-
-Database migration scripts are available in
-
-```
-src/main/resources/db/migration
-```
-
----
-
-# JAR File
-
-The executable JAR is available in
-
-```
-build/digit_assignment.jar
-```
-
----
-
-# Screenshots
-
-The assignment submission includes screenshots of
-
-- Successful Create API
-- Successful Update API
-- Successful Search API
-- JUnit Test Results
-
----
-
-# Repository
-
-GitHub Repository
-
-https://github.com/shwetha-hegde/digit-assignment
-
----
-
-# Assignment Deliverables
-
-✔ Source Code
-
-✔ Public GitHub Repository
-
-✔ JAR File
-
-✔ Workflow Configuration
-
-✔ Master Data
-
-✔ Persister Configuration
-
-✔ Indexer Configuration
-
-✔ Postman Collection
-
-✔ JUnit Test Cases
-
-✔ API Testing
-
----
-
-# Author
-
-**Shwetha Bhaskar Hegde**
+**Shama Bhat**
 
 Software Developer
 
-DIGIT Developer Certification (Level 1) Assignment
+DIGIT Developer Certification (Level 1)
